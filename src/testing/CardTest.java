@@ -5,6 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import setGame.Card;
+import enums.Color;
+import enums.Number;
+import enums.Shading;
+import enums.Shape;
+
 public class CardTest {
 
 	@Before
@@ -13,7 +19,11 @@ public class CardTest {
 
 	@Test
 	public void initCardTest() {
-		fail("Not yet implemented");
+		Card card = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
+		assertEquals(Color.RED, card.getColor());
+		assertEquals(Shape.SQUIGGLE, card.getShape());
+		assertEquals(Shading.SOLID, card.getShading());
+		assertEquals(Number.TWO, card.getNumber());
+	
 	}
-
 }
