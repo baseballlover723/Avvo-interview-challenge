@@ -24,10 +24,11 @@ public class SetTest {
 		Card card2 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
 		Card card3 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
 
-		set = new Set(card1, card2, card3);
-		assertEquals(card1, set.getFirstCard());
-		assertEquals(card2, set.getSecondCard());
-		assertEquals(card3, set.getThirdCard());
+		Set set = new Set(card1, card2, card3);
+		assertEquals(card1, set.getCard1());
+		assertEquals(card2, set.getCard2());
+		assertEquals(card3, set.getCard3());
+		assertFalse(set.isValid());
 	}
 
 }
