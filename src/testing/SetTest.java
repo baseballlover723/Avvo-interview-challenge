@@ -59,7 +59,6 @@ public class SetTest {
 		this.invalidSets.add(new Set(card1, card2, card6));
 		this.invalidSets.add(new Set(card1, card2, card8));
 		this.invalidSets.add(new Set(card12, card13, card15));
-
 	}
 
 	@Test
