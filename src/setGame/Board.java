@@ -14,15 +14,15 @@ public class Board extends Deck {
     }
 
     public boolean hasSetRevealed() {
-        if (this.cards.size() < 3) {
+        if (this.size() < 3) {
             return false;
         }
-        for (int i = 0; i < this.cards.size() - 2; i++) {
-            for (int k = i + 1; k < this.cards.size() - 1; k++) {
-                for (int j = k + 1; j < this.cards.size(); j++) {
-                    Card card1 = this.cards.get(i);
-                    Card card2 = this.cards.get(k);
-                    Card card3 = this.cards.get(j);
+        for (int i = 0; i < this.size() - 2; i++) {
+            for (int k = i + 1; k < this.size() - 1; k++) {
+                for (int j = k + 1; j < this.size(); j++) {
+                    Card card1 = this.get(i);
+                    Card card2 = this.get(k);
+                    Card card3 = this.get(j);
                     Set set = new Set(card1, card2, card3);
                     if (set.isValid()) {
                         return true;

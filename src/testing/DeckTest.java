@@ -23,7 +23,7 @@ public class DeckTest {
     public void initDeckWithSizeTest() {
         int deckSize = 34;
         Deck deck = new Deck(deckSize);
-        assertEquals(deckSize, deck.getCards().size());
+        assertEquals(deckSize, deck.size());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class DeckTest {
         int numberOfTests = 10_000;
         for (int k = 0; k < numberOfTests; k++) {
             Deck deck = new Deck();
-            assertTrue(deck.getCards().size() >= Deck.MIN_DECK_SIZE && deck.getCards().size() <= Deck.MAX_DECK_SIZE);
+            assertTrue(deck.size() >= Deck.MIN_DECK_SIZE && deck.size() <= Deck.MAX_DECK_SIZE);
         }
     }
 
@@ -45,7 +45,7 @@ public class DeckTest {
 
         Card[] cards = new Card[] { card1, card2, card3, card4, card5 };
         Deck deck = new Deck(cards);
-        assertArrayEquals((Object[]) cards, deck.getCards().toArray());
+        assertArrayEquals((Object[]) cards, deck.toArray());
 
     }
 
