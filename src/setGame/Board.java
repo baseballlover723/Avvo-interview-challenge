@@ -2,7 +2,7 @@ package setGame;
 
 public class Board extends Deck {
     public Board() {
-        super();
+        super(0);
     }
 
     public Board(int deckSize) {
