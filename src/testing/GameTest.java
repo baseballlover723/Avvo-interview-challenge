@@ -38,9 +38,9 @@ public class GameTest {
         Card card7 = new Card(Color.RED, Shape.OVAL, Shading.SOLID, Number.ONE);
 
         Card[] cards = new Card[] { card1, card2, card3, card4, card5, card6, card7 };
-        
-        Game game = new Game(new Deck(cards), new Board());
-        assertArrayEquals((Object[]) cards, game.getBoard().toArray());
+        Deck deck = new Deck(cards);
+        Game game = new Game(deck, new Board());
+        assertArrayEquals((Object[]) cards, game.getDeck().toArray());
         assertFalse(game.getDeck().isEmpty());
     }
 
