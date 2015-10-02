@@ -37,9 +37,6 @@ public class Card {
     }
 
     public static Card generateRandomCard() {
-        Random random = new Random();
-        Color randomColor = Color.values()[random.nextInt(Color.values().length)];
-        // System.out.println(randomColor);
         return new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
     }
 
