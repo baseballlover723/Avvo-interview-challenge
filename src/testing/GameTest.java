@@ -1,8 +1,11 @@
 package testing;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import setGame.Game;
 
 
 public class GameTest {
@@ -11,6 +14,11 @@ public class GameTest {
 	public void setUp() throws Exception {
 	}
 
+	@Test
+	public void initGameTest() {
+	    assertNotNull(new Game());
+	}
+	
 	@Test
 	public void PlaythroughTest1() {
 		fail("Not yet implemented");
