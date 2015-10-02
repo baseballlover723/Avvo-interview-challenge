@@ -31,6 +31,26 @@ public class Deck {
         this.revealedCards = new ArrayList<Card>(Arrays.asList(cards));
     }
 
+    public boolean hasSetRevealed() {
+        if (this.revealedCards.size() < 3) {
+            return false;
+        }
+        for (int i = 0; i < this.revealedCards.size() - 2; i++) {
+            for (int k = i + 1; k < this.revealedCards.size() - 1; k++) {
+                for (int j = k + 1; j < this.revealedCards.size(); j++) {
+                    Card card1 = this.revealedCards.get(i);
+                    Card card2 = this.revealedCards.get(k);
+                    Card card3 = this.revealedCards.get(j);
+                    Set set = new Set(card1, card2, card3);
+                    if (set.isValid()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public ArrayList<Card> getRemainingCards() {
         return this.remainingCards;
     }
