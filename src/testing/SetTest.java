@@ -79,7 +79,10 @@ public class SetTest {
 		for (Set set : this.validSets) {
 			assertTrue(set.isValid());
 		}
+	}
 
+	@Test
+	public void invalidSetTest() {
 		for (Set set : this.invalidSets) {
 			assertFalse(set.isValid());
 		}
