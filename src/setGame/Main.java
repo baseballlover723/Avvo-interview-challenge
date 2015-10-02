@@ -19,8 +19,8 @@ public class Main {
     }
 
     public static boolean method2(Card[] cards) {
-        Deck deck = new Deck(cards);
-        boolean hasSetRevealed = deck.hasSetRevealed();
+        Board board = new Board(cards);
+        boolean hasSetRevealed = board.hasSetRevealed();
         if (hasSetRevealed) {
             System.out.println("Found a set on the given board");
         } else {
