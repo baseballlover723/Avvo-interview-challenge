@@ -30,6 +30,7 @@ public class CardTest {
 
     @Test
     public void randomCardTest() {
+        // this exists to prevent failures if just unlucky
         boolean gotBadLuck = false;
         for (int k = 0; k < 10; k++) {
             HashSet<Card> cards = new HashSet<Card>();
