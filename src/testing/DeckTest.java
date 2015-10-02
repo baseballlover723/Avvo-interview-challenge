@@ -23,6 +23,7 @@ public class DeckTest {
         int deckSize = 34;
         Deck deck = new Deck(deckSize);
         assertEquals(deckSize, deck.getRemainingCards().size());
+        assertEquals(0, deck.getRevealedCards().size());
     }
 
     @Test
@@ -32,7 +33,25 @@ public class DeckTest {
             Deck deck = new Deck();
             assertTrue(deck.getRemainingCards().size() >= Deck.MIN_DECK_SIZE &&
                     deck.getRemainingCards().size() <= Deck.MAX_DECK_SIZE);
+            assertEquals(0, deck.getRevealedCards().size());
         }
+    }
+    
+    @Test
+    public void initDeckWithRevealedCardsTest() {
+        Card card1 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);
+        Card card2 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
+        Card card3 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.THREE);
+        Card card4 = new Card(Color.RED, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
+        Card card5 = new Card(Color.RED, Shape.SQUIGGLE, Shading.STRIPED, Number.ONE);
+        Card card6 = new Card(Color.RED, Shape.DIAMOND, Shading.SOLID, Number.ONE);
+        Card card7 = new Card(Color.RED, Shape.OVAL, Shading.SOLID, Number.ONE);
+        
+        Card[] cards = new Card[] {card1, card2, card3, card4, card5, card6, card7};
+        
+        Deck deck = new Deck(cards);
+        assertArrayEquals((Object[]) cards, deck.getRevealedCards().toArray());
+
     }
 
     @Test
