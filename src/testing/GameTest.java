@@ -1,7 +1,6 @@
 package testing;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,8 +23,8 @@ public class GameTest {
     @Test
     public void initGameTest() {
         Game game = new Game();
-        assertFalse(game.getDeck().empty());
-        assertTrue(game.getBoard().empty());
+        assertFalse(game.getDeck().isEmpty());
+        assertTrue(game.getBoard().isEmpty());
     }
 
     @Test
@@ -42,7 +41,7 @@ public class GameTest {
         
         Game game = new Game(new Deck(cards), new Board());
         assertArrayEquals((Object[]) cards, game.getBoard().toArray());
-        assertFalse(game.getDeck().empty());
+        assertFalse(game.getDeck().isEmpty());
     }
 
     @Test
@@ -59,7 +58,7 @@ public class GameTest {
         
         Game game = new Game(new Deck(), new Board(cards));
         assertArrayEquals((Object[]) cards, game.getBoard().toArray());
-        assertFalse(game.getDeck().empty());
+        assertFalse(game.getDeck().isEmpty());
     }
 
     @Test
