@@ -71,7 +71,6 @@ public class SetTest {
 		assertEquals(card1, set.getCard1());
 		assertEquals(card2, set.getCard2());
 		assertEquals(card3, set.getCard3());
-		assertFalse(set.isValid());
 	}
 
 	@Test
