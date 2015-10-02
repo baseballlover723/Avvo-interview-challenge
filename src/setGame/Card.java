@@ -37,7 +37,12 @@ public class Card {
     }
 
     public static Card generateRandomCard() {
-        return new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
+        Random random = new Random();
+        Color randomColor = Color.values()[random.nextInt(Color.values().length)];
+        Shape randomShape = Shape.values()[random.nextInt(Shape.values().length)];
+        Shading randomShading = Shading.values()[random.nextInt(Shading.values().length)];
+        Number randomNumber = Number.values()[random.nextInt(Number.values().length)];
+        return new Card(randomColor, randomShape, randomShading, randomNumber);
     }
 
     @Override
