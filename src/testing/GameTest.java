@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class MainTest {
+public class GameTest {
 
 	@Before
 	public void setUp() throws Exception {
