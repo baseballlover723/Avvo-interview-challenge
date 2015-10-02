@@ -28,4 +28,8 @@ public class Deck {
     public ArrayList<Card> getCards() {
         return this.cards;
     }
+    
+    public Card remove(int index) {
+        return this.cards.remove(index);
+    }
 }
