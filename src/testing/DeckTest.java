@@ -74,5 +74,8 @@ public class DeckTest {
 
         Deck deck = new Deck(new Card[]{card1, card3, card4, card10});
         assertFalse(deck.hasSetRevealed());
-    }
+
+        deck = new Deck(new Card[]{card1, card3});
+        assertFalse(deck.hasSetRevealed());
+}
 }
