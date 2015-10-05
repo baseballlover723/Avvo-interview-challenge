@@ -89,7 +89,7 @@ public class GameTest {
     public void playthroughTest2() {
         ArrayList<Set> expectedSets = new ArrayList<Set>();
         Card card0 = new Card(Color.RED, Shape.DIAMOND, Shading.SOLID, Number.ONE);
-        
+
         Card card1 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);
         Card card2 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);
         Card card3 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);
@@ -113,7 +113,7 @@ public class GameTest {
         Card card16 = new Card(Color.GREEN, Shape.OVAL, Shading.SOLID, Number.ONE);
         Card card17 = new Card(Color.GREEN, Shape.OVAL, Shading.SOLID, Number.ONE);
         Card card18 = new Card(Color.GREEN, Shape.OVAL, Shading.SOLID, Number.ONE);
-        
+
         Card card19 = new Card(Color.GREEN, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
         Card card20 = new Card(Color.GREEN, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
 
@@ -156,7 +156,7 @@ public class GameTest {
         Card card16 = new Card(Color.RED, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
         Card card17 = new Card(Color.RED, Shape.SQUIGGLE, Shading.EMPTY, Number.TWO);
         Card card18 = new Card(Color.RED, Shape.OVAL, Shading.SOLID, Number.THREE);
-        Card card19 = new Card(Color.GREEN, Shape.OVAL, Shading.SOLID, Number.THREE);
+        Card card19 = new Card(Color.GREEN, Shape.OVAL, Shading.EMPTY, Number.THREE);
         Card card20 = new Card(Color.RED, Shape.OVAL, Shading.STRIPED, Number.THREE);
 
         Card[] cards = new Card[] { card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11,
@@ -166,7 +166,7 @@ public class GameTest {
         Game game = new Game(new Deck(cards), new Board());
         game.startGame();
         game.playGame();
-        
+
         assertTrue(game.getFoundSets().isEmpty());
     }
 
@@ -182,16 +182,11 @@ public class GameTest {
             return false;
         }
 
-        // to avoid messing the order of the lists we will use a copy
-        // as noted in comments by A. R. S.
-        expectedSets = new ArrayList<T>(expectedSets);
-        sets = new ArrayList<T>(sets);
-
-        Comparator comparator = new Comparator<Card>() {
+        Comparator comparator = new Comparator<Set>() {
             // the actual order doesn't matter, this is just to put it in some
             // sort of consistent order to check equality
-            public int compare(Card card1, Card card2) {
-                return card1.hashCode() - card2.hashCode();
+            public int compare(Set set1, Set set2) {
+                return Integer.compare(set1.hashCode(), set2.hashCode());
             }
         };
         Collections.sort(expectedSets, comparator);
