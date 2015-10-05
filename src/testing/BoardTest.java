@@ -48,7 +48,7 @@ public class BoardTest {
         Card card2 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
         Card card3 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.THREE);
         Card card4 = new Card(Color.RED, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
-        Card card5 = new Card(Color.RED, Shape.SQUIGGLE, Shading.STRIPED, Number.ONE);
+        Card card5 = new Card(Color.RED, Shape.OVAL, Shading.STRIPED, Number.ONE);
         
         Set expectedSet = new Set(card1, card2, card3);
         

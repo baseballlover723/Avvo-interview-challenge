@@ -1,16 +1,15 @@
 package setGame;
 
-public class Board extends Deck {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Board extends ArrayList<Card> {
     public Board() {
         super(0);
     }
 
-    public Board(int deckSize) {
-        super(deckSize);
-    }
-
     public Board(Card[] cards) {
-        super(cards);
+        super(Arrays.asList(cards));
     }
 
     public Set removeRevealedSet() {
