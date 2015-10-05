@@ -57,9 +57,6 @@ public class BoardTest {
 
         Board board = new Board(cards);
         Set blah = board.removeRevealedSet();
-        System.out.println(Arrays.toString(expectedSet.getCards()));
-        System.out.println();
-        System.out.println(Arrays.toString(blah.getCards()));
         assertEquals(expectedSet, blah);
         
     }
