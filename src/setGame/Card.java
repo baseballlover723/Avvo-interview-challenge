@@ -59,4 +59,10 @@ public class Card {
     public int hashCode() {
         return this.color.hashCode() + this.shape.hashCode() + this.shading.hashCode() + this.number.hashCode();
     }
+    
+    @Override
+    public String toString() {
+        return "[" + this.color + ", " + this.shape + ", " + this.shading + ", " + this.number + "]";
+    }
+
 }
