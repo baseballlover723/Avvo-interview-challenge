@@ -30,6 +30,9 @@ public class Main {
     }
 
     public static ArrayList<Set> method3() {
-        return new ArrayList<Set>();
+        Game game = new Game();
+        game.startGame();
+        game.playGame();
+        return game.getFoundSets();
     }
 }
