@@ -1,5 +1,8 @@
 package setGame;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 
 import enums.Color;
@@ -15,6 +18,7 @@ public class Set {
         this.cards[0] = card1;
         this.cards[1] = card2;
         this.cards[2] = card3;
+        Collections.sort(Arrays.asList(this.cards));
     }
 
     public Card getCard1() {
@@ -29,6 +33,10 @@ public class Set {
         return this.cards[2];
     }
 
+    public Card[] getCards() {
+        return this.cards;
+    }
+
     public boolean isValid() {
         HashSet<Color> colors = new HashSet<Color>();
         HashSet<Shape> shapes = new HashSet<Shape>();
@@ -40,11 +48,19 @@ public class Set {
             shadings.add(card.getShading());
             numbers.add(card.getNumber());
         }
-        
+
         // if any of these sets have 2 elements then they must have 2 of one
         // attribute and 1 of another and is hence not a set
         boolean hasSize2 = colors.size() == 2 || shapes.size() == 2 || shadings.size() == 2 || numbers.size() == 2;
         return !hasSize2;
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (other.getClass() != Set.class) {
+            return false;
+        }
+        Set otherSet = (Set) other;
+        return Arrays.equals(this.cards, otherSet.getCards());
+    }
 }

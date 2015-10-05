@@ -7,7 +7,7 @@ import enums.Number;
 import enums.Shading;
 import enums.Shape;
 
-public class Card {
+public class Card implements Comparable<Card>{
     private Color color;
     private Shape shape;
     private Shading shading;
@@ -63,6 +63,11 @@ public class Card {
     @Override
     public String toString() {
         return "[" + this.color + ", " + this.shape + ", " + this.shading + ", " + this.number + "]";
+    }
+
+    @Override
+    public int compareTo(Card other) {
+        return Integer.compare(this.hashCode(), other.hashCode());
     }
 
 }
