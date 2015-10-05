@@ -2,6 +2,9 @@ package testing;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import org.junit.Test;
 
 import enums.Color;
@@ -10,7 +13,7 @@ import enums.Shading;
 import enums.Shape;
 import setGame.Board;
 import setGame.Card;
-import setGame.Deck;
+import setGame.Set;
 
 public class BoardTest {
     @Test
@@ -37,5 +40,27 @@ public class BoardTest {
 
         board = new Board(new Card[] { card1, card3 });
         assertFalse(board.hasSetRevealed());
+    }
+    
+    @Test
+    public void removeRevealedSetTest() {
+        Card card1 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);
+        Card card2 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
+        Card card3 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.THREE);
+        Card card4 = new Card(Color.RED, Shape.SQUIGGLE, Shading.EMPTY, Number.ONE);
+        Card card5 = new Card(Color.RED, Shape.SQUIGGLE, Shading.STRIPED, Number.ONE);
+        
+        Set expectedSet = new Set(card1, card2, card3);
+        
+        Card[] cards = new Card[] { card1, card2, card3, card4, card5 };
+        Collections.shuffle(Arrays.asList(cards));
+
+        Board board = new Board(cards);
+        Set blah = board.removeRevealedSet();
+        System.out.println(Arrays.toString(expectedSet.getCards()));
+        System.out.println();
+        System.out.println(Arrays.toString(blah.getCards()));
+        assertEquals(expectedSet, blah);
+        
     }
 }
