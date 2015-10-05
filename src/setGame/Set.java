@@ -63,4 +63,14 @@ public class Set {
         Set otherSet = (Set) other;
         return Arrays.equals(this.cards, otherSet.getCards());
     }
+    
+    @Override
+    public int hashCode() {
+        return this.cards[0].hashCode() + this.cards[1].hashCode() + this.cards[2].hashCode();
+    }
+    
+    @Override
+    public String toString() {
+        return Arrays.toString(this.cards);
+    }
 }
