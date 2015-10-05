@@ -13,7 +13,6 @@ import setGame.Card;
 import setGame.Deck;
 
 public class BoardTest {
-
     @Test
     public void hasSetRevealedTest() {
         Card card1 = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.ONE);

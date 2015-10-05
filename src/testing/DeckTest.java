@@ -14,11 +14,6 @@ import setGame.Card;
 import setGame.Deck;
 
 public class DeckTest {
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void initDeckWithSizeTest() {
         int deckSize = 34;

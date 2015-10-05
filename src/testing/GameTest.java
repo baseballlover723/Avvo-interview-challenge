@@ -24,11 +24,6 @@ import setGame.Game;
 import setGame.Set;
 
 public class GameTest {
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void initGameTest() {
         Game game = new Game();

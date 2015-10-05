@@ -14,11 +14,6 @@ import enums.Shading;
 import enums.Shape;
 
 public class CardTest {
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test
     public void initCardTest() {
         Card card = new Card(Color.RED, Shape.SQUIGGLE, Shading.SOLID, Number.TWO);
